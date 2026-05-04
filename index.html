@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            /* CSS */
+            h2{
+                color: aqua;
+            }
+            p{
+                color: purple;
+            }
+        </style>
+        
+        <title>Title</title>
+    </head>
+    <body>
+        <!-- HTML -->
+         <div class="container-fluid mt-3">
+        <div class="row">
+            <!-- Left Side: The Canvas -->
+            <div id="canvas-container" class="col-md-8">
+                <!-- p5.js will put the canvas here -->
+            </div>
+
+            <!-- Right Side: Your Paragraph -->
+            <div class="col-md-4">
+                <h2>About this Project</h2>
+                <p>
+                    This project was meant to show the preservation of coding. To me, coding is pretty much the langauge of the world. All the digital technology and computers and phones you see today are all created through code. This is being threatened by AI, which is slowly taking over the industry of technology. If AI takes over, people will become lazy and will stop learning to code, and eventually, there gets to a point where we won't be able to fix things and everything will appear the same.
+                </p>
+            </div>
+        </div>
+    </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+        <script>
+            // JS
+            
+    
+    var ballA;
+    var ballB;
+    var ballC;
+    var ballD;
+    var ballE;
+    var ballF;
+    var ballG;
+    var ballH;
+    // speeds so that you could change between positive and negative
+    var ballSpeedA = 5; 
+    var ballSpeedB = 5;
+    var ballSpeedC = 5; 
+    var ballSpeedD = 5;
+    var ballSpeedE = 5; 
+    var ballSpeedF = 5;
+    var ballSpeedG = 5; 
+    var ballSpeedH = 5;
+
+    function setup() {
+        frameRate(60)
+        let cnv = createCanvas(800, 600);
+        cnv.parent('canvas-container');
+        noCursor();
+        ballA = random(width); 
+        ballB = random(height); 
+        ballC = random(width); 
+        ballD = random(height); 
+        ballE = random(width); 
+        ballF = random(height); 
+        ballG = random(width); 
+        ballH = random(height); 
+    }
+    // functions put in the draw loop so they can continuously run
+    function draw() {
+        background(255,0,255);
+        moveBall();
+        checkCollide();
+        drawBall();
+    }
+
+    function moveBall() {
+        ballA = ballA + ballSpeedA;
+        ballB = ballB + ballSpeedB;
+        ballC = ballC + ballSpeedC;
+        ballD = ballD + ballSpeedD;
+        ballE = ballE + ballSpeedE;
+        ballF = ballF + ballSpeedF;
+        ballG = ballG + ballSpeedG;
+        ballH = ballH + ballSpeedH;
+
+        // console.log("ballSpeedX: " + ballSpeedX + ", ballSpeedY: " + ballSpeedY);  check to make sure moveBall works
+    }
+
+    function checkCollide() {
+        if (ballA < 0 || ballA > width) {
+            ballSpeedA = ballSpeedA * -1; // check for ball on X axis being smaller than 0 and greater than the width 
+        }
+        if (ballB > height || ballB < 0) {
+            ballSpeedB = ballSpeedB * -1; // checks for ball being less than 0 on the Y axis
+        }
+         if (ballC < 0 || ballC > width) {
+            ballSpeedC = ballSpeedC * -1; // check for ball on X axis being smaller than 0 and greater than the width 
+        }
+        if (ballD > height || ballD < 0) {
+            ballSpeedD = ballSpeedD * -1; // checks for ball being less than 0 on the Y axis
+        }
+         if (ballE < 0 || ballE > width) {
+            ballSpeedE = ballSpeedE * -1; // check for ball on X axis being smaller than 0 and greater than the width 
+        }
+        if (ballF > height || ballF < 0) {
+            ballSpeedF = ballSpeedF * -1; // checks for ball being less than 0 on the Y axis
+        } if (ballG < 0 || ballG > width) {
+            ballSpeedG = ballSpeedG * -1; // check for ball on X axis being smaller than 0 and greater than the width 
+        }
+        if (ballH > height || ballH < 0) {
+            ballSpeedH = ballSpeedH * -1; // checks for ball being less than 0 on the Y axis
+        }
+            
+    }
+
+    function drawBall() {
+        strokeWeight(0);
+        fill(255,255,0)
+        textSize(48)
+        text('HTML', ballA, ballB);
+        text('CSS', ballC, ballD);
+        text('Javascript', ballE, ballF);
+        text('Java', ballG, ballH);
+
+
+
+    }
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
